@@ -907,11 +907,11 @@ a:hover {
 }
 
 .block-3 .owl-nav .owl-prev {
-  left: 0;
+  left: -15px;
 }
 
 .block-3 .owl-nav .owl-next {
-  right: 0;
+  right: -15px;
 }
 
 .block-3 .owl-dots {
@@ -1671,7 +1671,7 @@ a:hover {
 }
 
 .lowerFooter {
-  background-color: #1F3A8A;
+  background-color: #1f3a8a;
   padding-bottom: 5px;
 }
 
