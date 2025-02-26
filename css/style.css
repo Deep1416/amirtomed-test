@@ -1679,3 +1679,12 @@ a:hover {
 .custom-gap {
   gap: 10px;
 }
+
+
+.custom-top{
+  padding-top: 25px;
+}
+
+.custom-width{
+  width: 50%;
+}
