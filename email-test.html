@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EmailJS Test</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				max-width: 600px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			button {
+				padding: 10px 15px;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+			.result {
+				margin-top: 20px;
+				padding: 10px;
+				border: 1px solid #ddd;
+				background-color: #f9f9f9;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>EmailJS Test</h1>
+		<p>This page tests if your EmailJS configuration is working correctly.</p>
+
+		<div>
+			<button id="test-button">Send Test Email</button>
+		</div>
+
+		<div id="result" class="result">Result will appear here...</div>
+
+		<script>
+			(function () {
+				// Initialize EmailJS
+				emailjs.init("2Xp1T1uGiJ0_iVv9zzFB3");
+
+				document.getElementById("test-button").addEventListener("click", function () {
+					const resultDiv = document.getElementById("result");
+					resultDiv.innerHTML = "Sending test email...";
+
+					// Prepare template parameters for test
+					const templateParams = {
+						from_name: "Test User",
+						email: "test@example.com",
+						subject: "Test Email",
+						message: "This is a test message from EmailJS test page.",
+					};
+
+					// Send email using EmailJS
+					emailjs
+						.send("service_ourouj9", "template_9khzytm", templateParams)
+						.then(function (response) {
+							console.log("SUCCESS!", response.status, response.text);
+							resultDiv.innerHTML = `<p style="color: green;">Success! Email sent.</p>
+                                              <p>Status: ${response.status}</p>
+                                              <p>Response: ${response.text}</p>`;
+						})
+						.catch(function (error) {
+							console.error("FAILED...", error);
+							resultDiv.innerHTML = `<p style="color: red;">Failed to send email.</p>
+                                              <p>Error: ${JSON.stringify(error)}</p>`;
+						});
+				});
+			})();
+		</script>
+	</body>
+</html>
