@@ -1,6 +1,6 @@
 (function () {
 	// Initialize EmailJS with your service ID
-	emailjs.init("xESxfIi5Tybb_d4Am");
+	emailjs.init("IMj0O4F14A0rBxYnU");
 
 	// Log to verify initialization
 	console.log("EmailJS initialized");
@@ -33,7 +33,7 @@
 
 				// Send email using EmailJS
 				emailjs
-					.send("service_ourouj9", "template_9khzytm", templateParams)
+					.send("service_c37wt8s", "template_ez2y5hr", templateParams)
 					.then(function (response) {
 						console.log("SUCCESS!", response.status, response.text);
 						submitBtn.value = "Message Sent!";
