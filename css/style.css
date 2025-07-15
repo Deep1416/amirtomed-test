@@ -1505,3 +1505,46 @@ a:hover {
 .custom-width {
 	width: 50%;
 }
+
+.gallery-img-container {
+	width: 200px !important;
+	height: 300px !important;
+	overflow: hidden;
+	margin-bottom: 24px; /* Add vertical gap */
+}
+.gallery-img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.gallery a {
+	width: 30%;
+	display: block;
+}
+
+.gallery img {
+	width: 100%;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.gallery img:hover {
+	transform: scale(1.02);
+}
+
+.mfp-bg {
+	backdrop-filter: blur(6px);
+	background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.object-contain {
+	object-fit: contain;
+}
